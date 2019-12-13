@@ -1,0 +1,1 @@
+magick image.png image.xbm
