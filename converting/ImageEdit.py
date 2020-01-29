@@ -3,7 +3,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 import time
-import XBMConv.converting.Main as XBMConvert
+import XBMConv.converting.XBM_Converter as XBMConvert
 
 conn = pyodbc.connect('''Driver={SQL Server};
                         Server=tcp:localhost,50001;
