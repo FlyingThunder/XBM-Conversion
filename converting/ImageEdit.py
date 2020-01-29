@@ -19,13 +19,13 @@ def insert_into_Image(ImageValue):
     Raum = (ImageValue[1])
     Datum = (ImageValue[2])
 
-    img = Image.open("../../Converting/image.png")
+    img = Image.open("Vorlage.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("C:\Windows\Fonts\comic.ttf", 40)
     draw.text((30, 85), Name, (0, 125, 125), font=font)
     draw.text((350, 85), Raum, (0, 125, 125), font=font)
     draw.text((10, 285), Datum, (0, 125, 125), font=font)
-    img.save("C:/Users/Administrator/Documents/Project_Türschild/XBMConv/converting/image.png")
+    img.save("image.png")
 
 def Fetch_Last_Row():
     global last_Row
@@ -37,21 +37,22 @@ def Fetch_Last_Row():
 
     if last_Row == None:
         last_Row = DB_Data[-1]
-        print("Erster Durchlauf")
-        print(last_Row)
+        print("Ersteraufnahme von Datenbankwerten\n")
+        print("Letzter bekannter Wert:" + str(last_Row) + "\n")
     elif last_Row == DB_Data[-1]:
-        print("Kein neuer Wert")
-        print(last_Row)
+        print("Kein neuer Wert\n")
+        print("Letzter bekannter Wert:" + str(last_Row) + "\n")
     else:
-        print("Neuer Wert")
+        print("Neuer Wert gefunden!\n")
         last_Row = DB_Data[-1]
         insert_into_Image(last_Row)
-        print(last_Row)
+        print("Letzter bekannter Wert:" + str(last_Row) + "\n")
 
 
 while True:
     time.sleep(3)
-    print("Suche nach neuen Werten...")
+    print("Suche nach neuen Werten...\n")
     Fetch_Last_Row()
+    XBMConvert.XBM_Converter()
 
 

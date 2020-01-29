@@ -5,7 +5,7 @@ import shutil
 class XBM_Converter():
 
     def __init__(self):
-        print("Beginning procedure")
+        print("Scanning for convertable files \n")
         self.main()
         time.sleep(3)
 
@@ -62,5 +62,5 @@ class XBM_Converter():
 
 
 if __name__ == '__main__':
-    while True:
-        XBM_Converter()
+    XBM_Converter()
+#     while True:
